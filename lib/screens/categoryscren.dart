@@ -9,12 +9,13 @@ import '../model/dummydata.dart';
 import '../model/meal.dart';
 
 class categoryscreen extends StatelessWidget {
-  const categoryscreen({super.key, required this.ontogglefvt});
+  const categoryscreen({super.key, required this.ontogglefvt, required this.availablemeal});
   final void Function(Meal meal) ontogglefvt;
+  final List<Meal> availablemeal;
 
   void _ontapcategory(BuildContext context,Category category){
 
-    final filteredmeal = dummyMeals.where((meal) =>
+    final filteredmeal = availablemeal.where((meal) =>
         meal.categories.contains(category.id)).toList();
 
     Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>

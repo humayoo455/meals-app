@@ -1,8 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mealapp/screens/categoryscren.dart';
-import 'package:mealapp/screens/tabs.dart';
+import 'package:mealapp/widgets/tabs.dart';
 
 
 
@@ -15,7 +16,7 @@ final theme= ThemeData(
   textTheme: GoogleFonts.latoTextTheme()
 );
 void main (){
-  runApp(todoapp());
+  runApp(ProviderScope(child: todoapp()));
 }
 class todoapp extends StatelessWidget {
   const todoapp({super.key});
